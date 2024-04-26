@@ -3,9 +3,8 @@ import ProductCard from "@/components/ProductCart";
 
 export default function Home() {
   return (
-   <main>
-    <ProductCard name="Adidas2" price={80} imageUrl="/image/adidas2.webp" />
-    <ProductCard name="Adidas" price={60} imageUrl="/image/adidas.webp" />
+   <main className="flex flex-col items-center justify-center">
+    <ProductCard name="Adidas" price={60} imageUrl="/image/adidas.webp" currency={""} image={undefined} />
    </main>
   );
 }

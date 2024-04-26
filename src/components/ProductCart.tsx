@@ -16,10 +16,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price, curren
 
 
   return (
-    <div className="product-card">
-      <Image src={imageUrl} alt={name} className="product-image" width={100} height={100}/>
-      <h2 className="product-name">{name}</h2>
-      <p className="product-price">${price}</p>
+    <div className="product-card border border-[#ccc] w-72 rounded-md text-center m-4 p-4">
+      <Image src={imageUrl} alt={name} className="rounded-md " width={300} height={300}/>
+      <h2 className="font-semibold my-2.5">{name}</h2>
+      <p className="text-gray-800 mb-4">£{price}</p>
 
       <AddToBag name={name} imageUrl={imageUrl} price={price} currency={currency} image={image}/>
     </div>

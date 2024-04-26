@@ -69,25 +69,11 @@
 
 
 
-/*cart*/
-.product-card {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px;
-  text-align: center;
-  width: 300px;
-  border-radius: 10px;
-}
 
-.product-image {
-  width: 300px;
-  height: auto;
-}
 
-.product-name {
-  margin: 10px 0;
-  font-weight: 700;
-}
+
+
+
 
 .product-price {
   color: #888;
