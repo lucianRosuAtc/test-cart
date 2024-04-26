@@ -32,7 +32,8 @@ export default function AddToBag({
     <Button
       className=" shadow-xl my-4"
       onClick={() => {
-        addItem(product), handleCartClick();
+        addItem(product)
+        , handleCartClick();
       }}
     >
       Add to Cart
