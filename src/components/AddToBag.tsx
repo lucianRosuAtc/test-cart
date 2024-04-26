@@ -1,30 +1,31 @@
-'use client'
+"use client";
 
-import ProductCard from './ProductCart';
-import { Button } from './ui/button'
-import { useShoppingCart } from 'use-shopping-cart'
+import { Button } from "./ui/button";
+import { useShoppingCart } from "use-shopping-cart";
 
-export interface ProductCart{
-    name: string;
-    imageUrl: string;
-    price: number;  
+export interface ProductCart {
+  name: string;
+  imageUrl: string;
+  price: number;
 }
 
-
-
-export default function AddToBag({name, imageUrl, price}: ProductCart) {
-
-        const {addItem, handleCartClick} = useShoppingCart();
-        const product = {
-                name: name,
-                imageUrl: imageUrl,
-                price: price,
-                id:'string',
-                sku: 'string', 
-        }
-    return (
-        <Button onClick={()=>{ addItem(product), handleCartClick() }}>
-            Add to Cart
-        </Button>
-    )
+export default function AddToBag({ name, imageUrl, price }: ProductCart) {
+  const { addItem, handleCartClick } = useShoppingCart();
+  const product = {
+    name: name,
+    imageUrl: imageUrl,
+    price: price,
+    id: "string",
+    sku: "string",
+  };
+  return (
+    <Button
+      onClick={() => {
+        addItem(product), handleCartClick();
+        // addItem({ ...product, currency: "USD" }), handleCartClick();
+      }}
+    >
+      Add to Cart
+    </Button>
+  );
 }

@@ -36,14 +36,9 @@
 
 // export default ProductCard;
 
-
-
-
 "use client";
 import React from "react";
 import PropTypes from "prop-types";
-import { Button } from "./ui/button";
-import { useShoppingCart } from "use-shopping-cart";
 import AddToBag from "./AddToBag";
 
 type ProductCardProps = {
@@ -53,9 +48,6 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price }) => {
-
-
-
   const onAdd = () => {
     // Add your logic here
     console.log("Add to Cart clicked");

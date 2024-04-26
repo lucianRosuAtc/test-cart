@@ -35,6 +35,14 @@ export default function ShopingCartModal() {
                           height={100}
                         />
                       </div>
+                      <div className="ml-4 flex flex-1 flex-col">
+                        <div className="">
+                          <div className="flex justify-between text-base font-medium text-gray-900">
+                            <h3 className="">{entry.name}</h3>
+                            <p className="">{entry.price}</p>
+                          </div>
+                        </div>
+                      </div>
                     </li>
                   ))}
                 </>
