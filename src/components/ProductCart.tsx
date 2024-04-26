@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from './ui/button';
 
 type ProductCardProps = {
   name: string;
@@ -16,10 +17,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price }) => {
 
   return (
     <div className="product-card">
-      <img src={imageUrl} alt={name} />
-      <h2>{name}</h2>
-      <p>${price}</p>
-      <button onClick={onAdd}>Add to Cart</button>
+      <img src={imageUrl} alt={name} className='product-image'/>
+      <h2 className='product-name'>{name}</h2>
+      <p className='product-price'>${price}</p>
+      <Button onClick={onAdd} variant="default" >Add to Cart</Button>
     </div>
   );
 };

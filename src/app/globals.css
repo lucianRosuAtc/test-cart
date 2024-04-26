@@ -1,27 +1,111 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+  @tailwind components;
+  @tailwind utilities;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
   }
-}
 
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+
+
+
+  
+
+/*cart*/
 .product-card {
   border: 1px solid #ccc;
   padding: 20px;
   margin: 20px;
   text-align: center;
+  width: 300px;
+  border-radius: 10px;
 }
 
-.product-card img {
-  width: 100%;
+.product-image {
+  width: 300px;
   height: auto;
 }
 
-.product-card button {
-  background-color: #008CBA; /* Blue */
+.product-name {
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.product-price {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.add-to-cart-button {
+  background-color: #f36625; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -31,4 +115,67 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 10px;
+  font-weight: 600;
 }
+
+.add-to-cart-button:hover {
+  color: black;
+
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* navbar */
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 5rem;
+  padding-right: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 5rem;
+}
+
+ /* dropdown  */
+.cart-dropdown {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 1;
+}
+
+/* cart and x */
+.dropdown-icons {
+  color: rgb(228, 129, 17);
+  cursor: pointer;
+}
+/* just x */
+.close-icon {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  border: #f36625 solid 1px;
+  padding: 7px;
+}
+
+.cart-item-image {
+  border: #ccc 1px solid;
+  border-radius: 10px;
+}
+
+.cart-item-name {
+  flex-grow: 1;
+  margin: 20px 0 10px 0;
+}
+
+
