@@ -7,22 +7,25 @@ export interface ProductCart {
   name: string;
   imageUrl: string;
   price: number;
+  currency: string;
+  image:any;
 }
 
-export default function AddToBag({ name, imageUrl, price }: ProductCart) {
+export default function AddToBag({ name, imageUrl, price, currency }: ProductCart) {
   const { addItem, handleCartClick } = useShoppingCart();
   const product = {
     name: name,
-    imageUrl: imageUrl,
+    image: imageUrl,
     price: price,
     id: "string",
-    sku: "string",
+    currency: currency 
   };
   return (
     <Button
       onClick={() => {
-        addItem(product), handleCartClick();
-        // addItem({ ...product, currency: "USD" }), handleCartClick();
+        addItem(product),
+        handleCartClick()
+      
       }}
     >
       Add to Cart

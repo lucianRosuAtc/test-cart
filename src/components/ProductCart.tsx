@@ -1,65 +1,27 @@
-// "use client";
-// import React from "react";
-// import PropTypes from "prop-types";
-// import { Button } from "./ui/button";
-
-// type ProductCardProps = {
-//   name: string;
-//   imageUrl: string;
-//   price: number;
-// };
-
-// const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price }) => {
-//   const onAdd = () => {
-//     // Add your logic here
-//     console.log("Add to Cart clicked");
-//   };
-
-//   return (
-//     <div className="product-card">
-//       <img src={imageUrl} alt={name} className="product-image" />
-//       <h2 className="product-name">{name}</h2>
-//       <p className="product-price">${price}</p>
-
-//       <Button onClick={onAdd} variant="default">
-//         Add to Cart
-//       </Button>
-//     </div>
-//   );
-// };
-
-// ProductCard.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   imageUrl: PropTypes.string.isRequired,
-//   price: PropTypes.number.isRequired,
-// };
-
-// export default ProductCard;
 
 "use client";
-import React from "react";
 import PropTypes from "prop-types";
 import AddToBag from "./AddToBag";
+import Image from "next/image";
 
 type ProductCardProps = {
   name: string;
   imageUrl: string;
   price: number;
+  currency: string;
+  image:any
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price }) => {
-  const onAdd = () => {
-    // Add your logic here
-    console.log("Add to Cart clicked");
-  };
+const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price, currency, image }) => {
+
 
   return (
     <div className="product-card">
-      <img src={imageUrl} alt={name} className="product-image" />
+      <Image src={imageUrl} alt={name} className="product-image" width={100} height={100}/>
       <h2 className="product-name">{name}</h2>
       <p className="product-price">${price}</p>
 
-      <AddToBag name={name} imageUrl={imageUrl} price={price} />
+      <AddToBag name={name} imageUrl={imageUrl} price={price} currency={currency} image={image}/>
     </div>
   );
 };

@@ -1,23 +1,23 @@
 "use client";
-import { CartProvider as USCProvider } from "use-shopping-cart";
+import { CartProvider } from "use-shopping-cart";
 
-export default function CartProvider({
+export default function MyCartProvider({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <USCProvider
+    <CartProvider
       mode="payment"
       cartMode="client-only"
-      currency="USD"
-      stripe=""
-      successUrl=""
-      cancelUrl=""
+      currency="GBP"
+      stripe={ process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string}
+      successUrl="eca"
+      cancelUrl="efwqef"
       shouldPersist={true}
-      billingAddressCollection={true}
+      billingAddressCollection={false}
     >
       {children}
-    </USCProvider>
+    </CartProvider>
   );
 }

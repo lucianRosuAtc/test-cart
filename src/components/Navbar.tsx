@@ -1,5 +1,4 @@
 'use client'
-import React, { useContext, useState } from "react";
 import { ShoppingCart, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useShoppingCart } from "use-shopping-cart";
@@ -8,11 +7,11 @@ function Navbar() {
 
 const{handleCartClick} = useShoppingCart();
   return (
-    <div className="navbar-content">
-        <Button className="dropdown-icons" 
+    <div className="navbar-content bg-primary">
+        <Button className="dropdown-icons" variant='default' 
         onClick={() => handleCartClick()}
         >
-          <ShoppingCart />
+          <ShoppingCart className="text-orange-500"/>
         </Button>
     </div>
   );
