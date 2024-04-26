@@ -9,9 +9,9 @@ import {
 import { useShoppingCart } from "use-shopping-cart";
 
 export default function ShopingCartModal() {
-  const { cartCount } = useShoppingCart();
+  const { cartCount, shouldDisplayCart, handleCartClick, } = useShoppingCart();
   return (
-    <Sheet defaultOpen>
+    <Sheet open={shouldDisplayCart} onOpenChange={()=> handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw]">
         <SheetHeader>
           <SheetTitle>Shoping Cart</SheetTitle>
@@ -20,7 +20,7 @@ export default function ShopingCartModal() {
           <div className="mt-8 flex-1 overflow-y-auto">
             <ul className="-my-6 divide-y divide-gray-200">
               {cartCount === 0 ? (
-                <h1 className="text-3xl py-6">No items in the cart</h1>
+                <h1 className="py-6">No items in the cart</h1>
               ) : (
                 <h1>You have items in the cart</h1>
               )}
