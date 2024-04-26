@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   image,
 }) => {
   return (
-    <div className="product-card border border-[#ccc] w-72 rounded-md text-center m-4 p-4 shadow-xl">
+    <div className="border border-[#ccc] w-72 rounded-md text-center m-4 p-4 shadow-xl">
       <Image
         src={imageUrl}
         alt={name}

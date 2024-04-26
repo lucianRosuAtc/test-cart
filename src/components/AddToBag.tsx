@@ -33,6 +33,7 @@ export default function AddToBag({
       className=" shadow-xl my-4"
       onClick={() => {
         addItem(product)
+        // , handleCartClick();
         , handleCartClick();
       }}
     >
