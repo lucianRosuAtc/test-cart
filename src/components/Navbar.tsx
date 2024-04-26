@@ -7,7 +7,7 @@ function Navbar() {
 
 const{handleCartClick} = useShoppingCart();
   return (
-    <div className="navbar-content bg-primary">
+    <div className="flex items-center justify-end h-20 pr-4 mb-10 bg-primary">
         <Button className="dropdown-icons" variant='default' 
         onClick={() => handleCartClick()}
         >
