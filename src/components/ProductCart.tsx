@@ -1,4 +1,3 @@
-
 "use client";
 import PropTypes from "prop-types";
 import AddToBag from "./AddToBag";
@@ -9,19 +8,35 @@ type ProductCardProps = {
   imageUrl: string;
   price: number;
   currency: string;
-  image:any
+  image: any;
 };
 
-const ProductCard: React.FC<ProductCardProps> = ({ name, imageUrl, price, currency, image }) => {
-
-
+const ProductCard: React.FC<ProductCardProps> = ({
+  name,
+  imageUrl,
+  price,
+  currency,
+  image,
+}) => {
   return (
-    <div className="product-card border border-[#ccc] w-72 rounded-md text-center m-4 p-4">
-      <Image src={imageUrl} alt={name} className="rounded-md " width={300} height={300}/>
-      <h2 className="font-semibold my-2.5">{name}</h2>
-      <p className="text-gray-800 mb-4">£{price}</p>
+    <div className="product-card border border-[#ccc] w-72 rounded-md text-center m-4 p-4 shadow-xl">
+      <Image
+        src={imageUrl}
+        alt={name}
+        className="rounded-md shadow-xl"
+        width={300}
+        height={300}
+      />
+      <h2 className="font-semibold mt-4 mb-2.5">{name}</h2>
+      <p className="text-gray-500">£{price}</p>
 
-      <AddToBag name={name} imageUrl={imageUrl} price={price} currency={currency} image={image}/>
+      <AddToBag
+        name={name}
+        imageUrl={imageUrl}
+        price={price}
+        currency={currency}
+        image={image}
+      />
     </div>
   );
 };

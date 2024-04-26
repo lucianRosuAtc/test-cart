@@ -8,24 +8,31 @@ export interface ProductCart {
   imageUrl: string;
   price: number;
   currency: string;
-  image:any;
+  image: any;
 }
 
-export default function AddToBag({ name, imageUrl, price, currency }: ProductCart) {
+export default function AddToBag({
+  name,
+  imageUrl,
+  price,
+  currency,
+}: ProductCart) {
+
   const { addItem, handleCartClick } = useShoppingCart();
   const product = {
     name: name,
     image: imageUrl,
     price: price,
     id: "string",
-    currency: currency 
+    currency: currency,
   };
+
+
   return (
     <Button
+      className=" shadow-xl my-4"
       onClick={() => {
-        addItem(product),
-        handleCartClick()
-      
+        addItem(product), handleCartClick();
       }}
     >
       Add to Cart
