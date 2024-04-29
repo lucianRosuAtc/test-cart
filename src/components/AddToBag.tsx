@@ -33,8 +33,7 @@ export default function AddToBag({
       className=" shadow-xl my-4"
       onClick={() => {
         addItem(product)
-        // , handleCartClick();  
-        // this will help the cart to open after adding an item
+        , handleCartClick();  
   
       }}
     >
