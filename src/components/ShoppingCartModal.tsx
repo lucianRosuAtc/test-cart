@@ -26,7 +26,7 @@ export default function ShoppingCartModal() {
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent className="sm:max-w-lg w-[90vw]">
         <SheetHeader>
-          <SheetTitle className="mt-1">Shoping Cart</SheetTitle>
+          <SheetTitle className="mt-1">Shopping Cart</SheetTitle>
         </SheetHeader>
         <div className="h-full flex flex-col justify-between">
           <div className="mt-8 flex-1 overflow-y-auto">
