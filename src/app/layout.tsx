@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import MyCartProvider from "@/components/Providers";
-import ShopingCartModal from "@/components/ShopingCartModal";
+import ShoppingCartModal from "@/components/ShoppingCartModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <MyCartProvider>
           <Navbar />
-          <ShopingCartModal />
+          <ShoppingCartModal />
           {children}
         </MyCartProvider>
       </body>

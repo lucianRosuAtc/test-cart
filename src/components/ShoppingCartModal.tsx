@@ -12,7 +12,7 @@ import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import { Button } from "./ui/button";
 
-export default function ShopingCartModal() {
+export default function ShoppingCartModal() {
   const {
     cartCount,
     shouldDisplayCart,
@@ -53,14 +53,14 @@ export default function ShopingCartModal() {
                         <div className="">
                           <div className="flex justify-between text-base font-medium text-gray-500">
                             <h3 className="">
-                              product:{" "}
+                              Product:{" "}
                               <span className="font-semibold text-gray-900 mr-8">
                                 {entry.name}
                               </span>
                             </h3>
                             <p className="">
                               {" "}
-                              price:{" "}
+                              Price:{" "}
                               <span className="font-semibold text-gray-900">
                                 £{entry.price}
                               </span>
@@ -74,7 +74,7 @@ export default function ShopingCartModal() {
                               </span>
                             </p>
                             <p className="">
-                              total:{" "}
+                              Total:{" "}
                               <span className="font-semibold text-gray-900">
                                 £{totalPrice}
                               </span>
