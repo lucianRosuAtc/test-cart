@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import {
@@ -20,6 +19,8 @@ export default function ShoppingCartModal() {
     cartDetails,
     removeItem,
     totalPrice,
+    incrementItem,
+    decrementItem,
   } = useShoppingCart();
 
   return (
@@ -66,17 +67,28 @@ export default function ShoppingCartModal() {
                               </span>
                             </p>
                           </div>
+
                           <div className="flex flex-1 items-end justify-between text-sm mt-3">
-                            <p className="text-gray-500">
-                              QTY:
-                              <span className="font-semibold text-gray-900">
-                                {entry.quantity}
-                              </span>
-                            </p>
+                            <div className="flex items-center">
+                              <p className="text-gray-500">
+                                QTY:
+                                <span className="font-semibold text-gray-900">
+                                  {entry.quantity}
+                                </span>
+                              </p>
+                              <button className="bg-gray-200 py-1 px-2 mx-1 rounded-md shadow-lg cursor-pointer" onClick={() => incrementItem(entry.id)}>
+                                +
+                              </button>
+                              <button className="bg-gray-200 py-1 px-2.5 mx-1 rounded-md shadow-lg cursor-pointer" onClick={() => decrementItem(entry.id)}>
+                                -
+                              </button>
+                            </div>
+
                             <p className="">
                               Total:{" "}
                               <span className="font-semibold text-gray-900">
                                 £{totalPrice}
+                                {/* £{entry.price * entry.quantity} */}
                               </span>
                             </p>
                           </div>
@@ -86,7 +98,7 @@ export default function ShoppingCartModal() {
                               onClick={() => removeItem(entry.id)}
                             >
                               <Trash2 className="group-hover:text-red-500 mr-4" />
-                              Remove
+                              <span className="group-hover:font-bold group-hover:text-red-500">R</span>e<span className="group-hover:font-bold group-hover:text-red-500">m</span>o<span className="group-hover:font-bold group-hover:text-red-500">v</span>e
                             </Button>
                           </div>
                         </div>
