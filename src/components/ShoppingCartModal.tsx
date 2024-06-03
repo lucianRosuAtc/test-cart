@@ -76,12 +76,15 @@ export default function ShoppingCartModal() {
                                   {entry.quantity}
                                 </span>
                               </p>
-                              <button className="bg-gray-200 py-1 px-2 mx-1 rounded-md shadow-lg cursor-pointer" onClick={() => incrementItem(entry.id)}>
+                              <div className="group font-bold">
+
+                              <button className="bg-gray-200 py-1 px-2 mx-1 rounded-md shadow-lg cursor-pointer group-hover:text-green-500 hover:bg-gray-300" onClick={() => incrementItem(entry.id)}>
                                 +
                               </button>
-                              <button className="bg-gray-200 py-1 px-2.5 mx-1 rounded-md shadow-lg cursor-pointer" onClick={() => decrementItem(entry.id)}>
+                              <button className="bg-gray-200 py-1 px-2.5 mx-1 rounded-md shadow-lg cursor-pointer group-hover:text-red-500 hover:bg-gray-300" onClick={() => decrementItem(entry.id)}>
                                 -
                               </button>
+                              </div>
                             </div>
 
                             <p className="">
@@ -94,7 +97,7 @@ export default function ShoppingCartModal() {
                           </div>
                           <div className="flex items-center justify-center mt-6">
                             <Button
-                              className="font-medium text-secondary group"
+                              className="font-medium text-secondary group shadow-xl"
                               onClick={() => removeItem(entry.id)}
                             >
                               <Trash2 className="group-hover:text-red-500 mr-4" />
